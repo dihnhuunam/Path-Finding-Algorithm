@@ -15,7 +15,7 @@ sudo apt install libpng-dev
 
 ### IO2D
 
-Comment line 38 -> 46 in P0267_RefImpl/CMakeLists.txt
+Comment these lines (from 38 to 46) in CMakeLists.txt
 
 ```
 if( NOT DEFINED IO2D_WITHOUT_SAMPLES )
@@ -33,7 +33,6 @@ Clone and build library
 ```
 git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
 cd P0267_RefImpl
-# Comment these lines (from 38 to 46) in CMakeLists.txt
 mkdir -p build && cd build
 cmake ..
 make
