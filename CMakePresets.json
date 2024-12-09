@@ -1,0 +1,63 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "cxx-x86_64-debug",
+            "displayName": "Cxx-Debugger with Ninja for linux-x86_64",
+            "description": "Using compilers: C = /usr/bin/gcc-13, CXX = /usr/bin/g++-13",
+            "binaryDir": "${sourceDir}/out/build/",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++-13",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "cxx-x86_64-release",
+            "displayName": "Cxx-Releaser with Ninja for linux-x86_64",
+            "description": "Using compilers: C = /usr/bin/gcc-13, CXX = /usr/bin/g++-13",
+            "binaryDir": "${sourceDir}/out/build/",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++-13",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "build-debug",
+            "configurePreset": "cxx-x86_64-debug"
+        },
+        {
+            "name": "build-release",
+            "configurePreset": "cxx-x86_64-release"
+        }
+    ],
+    "testPresets": [],
+    "packagePresets": [
+        {
+            "name": "package-debug",
+            "configurePreset": "cxx-x86_64-debug",
+            "generators": [
+                "TGZ",
+                "DEB"
+            ]
+        },
+        {
+            "name": "package-release",
+            "configurePreset": "cxx-x86_64-release",
+            "generators": [
+                "TGZ",
+                "DEB"
+            ]
+        }
+    ]
+}
