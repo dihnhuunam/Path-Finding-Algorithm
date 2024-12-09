@@ -1,6 +1,6 @@
 # Path Finding Algorithm
 
-## Dependencies and 3rdparty
+## Dependencies and IO2D
 
 ### Dependencies
 
@@ -14,6 +14,13 @@ sudo apt install libpng-dev
 ```
 
 ### IO2D
+
+Clone repository
+
+```
+git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
+cd P0267_RefImpl
+```
 
 Comment these lines (from 38 to 46) in P0267_RefImpl/CMakeLists.txt
 
@@ -31,15 +38,13 @@ endif()
 Clone and build library
 
 ```
-git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
-cd P0267_RefImpl
 mkdir -p build && cd build
 cmake ..
 make
 sudo make install
 ```
 
-## Clone repository
+## Clone Path-Finding-Algorithm
 
 ```
 git clone https://github.com/dihnhuunam/Path-Finding-Algorithm.git --recurse-submodules
@@ -48,8 +53,9 @@ git clone https://github.com/dihnhuunam/Path-Finding-Algorithm.git --recurse-sub
 ## Compile and run
 
 ```
+cd Path-Finding-Algorithm
 mkdir build && cd build
 cmake ..
 make
- ./OSM_A_star_search  
+./PathFinding
  ```
