@@ -15,7 +15,7 @@ sudo apt install libpng-dev
 
 ### IO2D
 
-Comment these lines (from 38 to 46) in CMakeLists.txt
+Comment these lines (from 38 to 46) in P0267_RefImpl/CMakeLists.txt
 
 ```
 if( NOT DEFINED IO2D_WITHOUT_SAMPLES )
